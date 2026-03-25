@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minas Lara | Gobierno de Lara</title>
+    <meta name="description" content="Minas Lara: Proveedor líder de carbonato de calcio, arenas industriales y agregados para la construcción en Venezuela. Calidad certificada, entrega garantizada y capacidad para grandes volúmenes industriales.">
+    
+    <!-- SEO & Open Graph -->
+    <meta property="og:title" content="Minas Lara | Minerales que impulsan la industria">
+    <meta property="og:description" content="Suministramos minerales industriales con calidad certificada y logística garantizada a nivel nacional e internacional.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://minaslara.com">
+    <meta property="og:image" content="https://minaslara.com/img/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="canonical" href="https://minaslara.com">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- AOS CSS (Animations) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Preload Hero Image -->
+    <link rel="preload" href="img/hero/hero-bg.jpeg" as="image">
+    
+    <!-- Leaflet CSS (Map) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Schema.org for LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Empresa de Minerales No Metálicos Jacinto Lara C.A. (Minas Lara)",
+      "image": "https://minaslara.com/img/logo-social.jpg",
+      "@id": "https://minaslara.com/#business",
+      "url": "https://minaslara.com",
+      "telephone": "+58 251 1234567",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Zona Industrial I, Carrera 4 con calle 24 y calle 25. Edfi. Tecnoparque",
+        "addressLocality": "Barquisimeto",
+        "addressRegion": "Lara",
+        "postalCode": "3001",
+        "addressCountry": "VE"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-content">
+            <div class="logo-wrapper">
+                <a href="#inicio" class="logo">
+                    <img src="img/logos/logo.png" alt="Minas Lara Logo" class="navbar-logo">
+                    <span class="logo-text">Minas Lara</span>
+                </a>
+                <span class="navbar-slogan">MINERALES NO METÁLICOS PARA LA INDUSTRIA</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#quienes-somos">Nosotros</a>
+                <a href="#proceso">Proceso</a>
+                <a href="#materiales">Minerales</a>
+                <a href="#explorador">Explorador</a>
+                <a href="#impacto">Impacto</a>
+                <a href="#operaciones">Operaciones</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#contacto" class="btn btn-primary btn-nav-cta">Cotizar ahora</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Abrir menú">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="hero-bg">
+                <!-- EDITABLE: Imagen de fondo del Hero. Puedes usar una ruta local (img/...) o una URL de internet/nube -->
+                <img src="img/hero/hero-bg.jpeg" alt="Mina de extracción" loading="eager">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container hero-content">
+                <div class="hero-text" data-aos="fade-up">
+                    <h1 class="h1-seo">Suministramos los <span class="highlight">minerales</span> que impulsan la industria y el desarrollo del país</h1>
+                    <p>Calidad certificada, capacidad de despacho ilimitada y logística garantizada para sus proyectos industriales y de construcción.</p>
+                    <div class="hero-buttons">
+                        <a href="#materiales" class="btn btn-primary">Explorar Materiales</a>
+                        <a href="#contacto" class="btn btn-outline">Solicitar Cotización</a>
+                    </div>
+                    <p class="hero-urgency"><i data-lucide="clock"></i> Respuesta en menos de 24h</p>
+                </div>
+            </div>
+            
+            <!-- Estadísticas (Counters) -->
+            <div class="stats-container">
+                <div class="container stats-grid">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                        <span class="stat-number" data-target="8">0</span>
+                        <span class="stat-label">Años de Trayectoria</span>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <span class="stat-number" data-target="2000">0</span>
+                        <span class="stat-label">Ton/mes Despachadas</span>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span class="stat-label">% Calidad Certificada</span>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                        <span class="stat-number" data-target="25">0</span>
+                        <span class="stat-label">Aliados Industriales</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impacto Section -->
+        <section id="impacto" class="section-light">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Nuestro <span class="highlight">Impacto</span></h2>
+                    <p class="section-subtitle">Más allá de la extracción, generamos valor en cada nivel de nuestra operación.</p>
+                </div>
+
+                <!-- Impact Cards / Tabs -->
+                <div class="impact-grid">
+                    <div class="impact-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="impact-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <h3>Impacto Social</h3>
+                        <p>Mejoramos la calidad de vida en nuestras comunidades aledañas mediante programas de salud, educación y generación de empleo local. Priorizamos un entorno seguro y el bienestar de nuestras familias.</p>
+                    </div>
+                    
+                    <div class="impact-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="impact-icon">
+                            <i data-lucide="landmark"></i>
+                        </div>
+                        <h3>Impacto Nacional</h3>
+                        <p>Contribuimos activamente a la economía venezolana mediante el aporte de materia prima vital para la industria de la construcción, pago de tributos y fortalecimiento del aparato productivo nacional.</p>
+                    </div>
+
+                    <div class="impact-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="impact-icon">
+                            <i data-lucide="globe"></i>
+                        </div>
+                        <h3>Impacto Internacional</h3>
+                        <p>Nuestros minerales cumplen con estándares globales, permitiéndonos exportar a diversos países y posicionar la calidad de los recursos venezolanos en el mercado internacional.</p>
+                    </div>
+                </div>
+
+                <!-- Datos interactivos: Mapa y Gráfico -->
+                <div class="interactive-data">
+                    <div class="data-box" data-aos="fade-right">
+                        <h3>Presencia y Alcance</h3>
+                        <div id="impact-map" class="map-container"></div>
+                    </div>
+                    <div class="data-box" data-aos="fade-left">
+                        <h3>Crecimiento Sostenido</h3>
+                        <div class="chart-container">
+                            <canvas id="impact-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-cta" data-aos="fade-up">
+                    <a href="#contacto" class="btn btn-outline">Trabaja con nosotros <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ¿Por qué elegirnos? -->
+        <section id="beneficios" class="section-white">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">¿Por qué elegir <span class="highlight">Minas Lara</span>?</h2>
+                    <p class="section-subtitle">Garantizamos el suministro continuo de materia prima de alta pureza para su industria.</p>
+                </div>
+
+                <div class="benefits-grid">
+                    <div class="benefit-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="benefit-icon"><i data-lucide="truck"></i></div>
+                        <h4>Entregas Garantizadas</h4>
+                        <p>Contamos con logística propia y alianzas estratégicas para asegurar el cumplimiento de sus cronogramas de producción.</p>
+                    </div>
+                    <div class="benefit-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="benefit-icon"><i data-lucide="award"></i></div>
+                        <h4>Calidad Certificada</h4>
+                        <p>Nuestros minerales cumplen con los más estrictos estándares técnicos y químicos del mercado internacional.</p>
+                    </div>
+                    <div class="benefit-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="benefit-icon"><i data-lucide="layers"></i></div>
+                        <h4>Capacidad Sustancial</h4>
+                        <p>Poseemos una de las mayores reservas de minerales industriales de la región, garantizando suministro a largo plazo.</p>
+                    </div>
+                    <div class="benefit-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="benefit-icon"><i data-lucide="headphones"></i></div>
+                        <h4>Asesoría Técnica</h4>
+                        <p>Acompañamos a nuestros clientes con personal experto para optimizar el uso de nuestros materiales en su industria.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quienes Somos -->
+        <section id="quienes-somos" class="section-white">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Quiénes <span class="highlight">Somos</span></h2>
+                    <p class="section-subtitle">Con más de dos décadas de experiencia, nos consolidamos como líderes en la industria de minerales no metálicos en la región.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text" data-aos="fade-right">
+                        <h3>Nuestra Historia</h3>
+                        <p>Fundada con el propósito de aprovechar responsablemente los recursos naturales de Venezuela, <strong>Minas Lara</strong> ha evolucionado desde una operación local hasta convertirse en un referente nacional en la extracción y procesamiento de minerales industriales y agregados para la construcción.</p>
+                        <p>Nuestra trayectoria está marcada por la innovación constante en nuestros procesos y un compromiso inquebrantable con la calidad y la sostenibilidad.</p>
+                        
+                        <div class="mision-vision">
+                            <div class="mv-card">
+                                <i data-lucide="target"></i>
+                                <h4>Misión</h4>
+                                <p>Proveer minerales de la más alta calidad, superando las expectativas de nuestros clientes y promoviendo el desarrollo sostenible.</p>
+                            </div>
+                            <div class="mv-card">
+                                <i data-lucide="eye"></i>
+                                <h4>Visión</h4>
+                                <p>Ser reconocidos internacionalmente como la empresa venezolana líder en innovación y sustentabilidad minera.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-gallery" data-aos="fade-left">
+                        <div class="gallery-img g-img-1">
+                            <!-- EDITABLE: Imagen 1 de la galería Quiénes Somos -->
+                            <img src="img/nosotros/maquinaria-pesada.jpg" alt="Operaciones de extracción" loading="lazy">
+                        </div>
+                        <div class="gallery-img g-img-2">
+                            <!-- EDITABLE: Imagen 2 de la galería Quiénes Somos -->
+                            <img src="img/nosotros/procesamiento.jpg" alt="Procesamiento de minerales" loading="lazy">
+                        </div>
+                        <div class="gallery-img g-img-3">
+                            <!-- EDITABLE: Imagen 3 de la galería Quiénes Somos -->
+                            <img src="img/nosotros/laboratorio.jpg" alt="Laboratorio de calidad" loading="lazy">
+                        </div>
+                        <div class="gallery-img g-img-4">
+                            <div class="valores-card">
+                                <h4>Valores</h4>
+                                <ul>
+                                    <li><i data-lucide="check-circle-2"></i> Excelencia</li>
+                                    <li><i data-lucide="check-circle-2"></i> Integridad</li>
+                                    <li><i data-lucide="check-circle-2"></i> Seguridad</li>
+                                    <li><i data-lucide="check-circle-2"></i> Sostenibilidad</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operaciones y Maquinaria -->
+        <section id="operaciones" class="section-light">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Operaciones y <span class="highlight">Maquinaria</span></h2>
+                    <p class="section-subtitle">Contamos con equipos de vanguardia y el respaldo de nuestros aliados para garantizar una extracción y procesamiento eficientes.</p>
+                </div>
+                <div class="ops-gallery" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-img">
+                        <!-- EDITABLE: Imagen 1 de Operaciones -->
+                        <img src="img/operaciones/carga.jpg" alt="Operación a cielo abierto" loading="lazy">
+                        <div class="ops-overlay">Cielo abierto</div>
+                    </div>
+                    <div class="gallery-img">
+                        <!-- EDITABLE: Imagen 2 de Operaciones -->
+                        <img src="img/operaciones/cantera.jpg" alt="Trabajo en minas" loading="lazy">
+                        <div class="ops-overlay">Trabajo en Cantera</div>
+                    </div>
+                    <div class="gallery-img">
+                        <!-- EDITABLE: Imagen 3 de Operaciones -->
+                        <img src="img/operaciones/maquinaria.jpg" alt="Camión minero" loading="lazy">
+                        <div class="ops-overlay">Maquinaria Aliada</div>
+                    </div>
+                    <div class="gallery-img">
+                        <!-- EDITABLE: Imagen 4 de Operaciones -->
+                        <img src="img/operaciones/industria.jpg" alt="Operaciones industriales" loading="lazy">
+                        <div class="ops-overlay">Procesamiento</div>
+                    </div>
+                   
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso -->
+        <section id="proceso" class="section-white">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Cómo lo <span class="highlight">Hacemos</span></h2>
+                    <p class="section-subtitle">Nuestro proceso operativo garantiza eficiencia, seguridad y el menor impacto ambiental posible en cada etapa.</p>
+                </div>
+
+                <div class="timeline">
+                    <!-- Step 1 -->
+                    <div class="timeline-step" data-aos="fade-up">
+                        <div class="timeline-icon"><i data-lucide="search"></i></div>
+                        <div class="timeline-content">
+                            <h3>1. Exploración Geológica</h3>
+                            <p>Identificamos y evaluamos yacimientos con tecnología de punta para asegurar reservas de alta calidad de manera responsable.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="timeline-step" data-aos="fade-up" data-aos-delay="100">
+                        <div class="timeline-icon"><i data-lucide="pickaxe"></i></div>
+                        <div class="timeline-content">
+                            <h3>2. Extracción Controlada</h3>
+                            <p>Utilizamos métodos de extracción mecanizada de bajo impacto, priorizando la seguridad de nuestro personal y el respeto al entorno.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="timeline-step" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-icon"><i data-lucide="factory"></i></div>
+                        <div class="timeline-content">
+                            <h3>3. Procesamiento y Clasificación</h3>
+                            <p>Sometemos el material a rigurosos procesos de trituración, molienda y cribado para obtener granulometrías exactas.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="timeline-step" data-aos="fade-up" data-aos-delay="300">
+                        <div class="timeline-icon"><i data-lucide="microscope"></i></div>
+                        <div class="timeline-content">
+                            <h3>4. Control de Calidad</h3>
+                            <p>Cada lote es analizado en nuestros laboratorios para verificar pureza, composición química y cumplimiento de normativas ISO.</p>
+                        </div>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="timeline-step" data-aos="fade-up" data-aos-delay="400">
+                        <div class="timeline-icon"><i data-lucide="package"></i></div>
+                        <div class="timeline-content">
+                            <h3>5. Empaque e Inventario</h3>
+                            <p>Almacenamos los productos bajo condiciones controladas, empacados según los requerimientos específicos de cada cliente (granel, sacos, big bags).</p>
+                        </div>
+                    </div>
+                    <!-- Step 6 -->
+                    <div class="timeline-step" data-aos="fade-up" data-aos-delay="500">
+                        <div class="timeline-icon"><i data-lucide="truck"></i></div>
+                        <div class="timeline-content">
+                            <h3>6. Distribución y Comercialización</h3>
+                            <p>Garantizamos una logística eficiente para entregas oportunas a nivel nacional y despachos para exportación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Materiales Section -->
+        <section id="materiales" class="section-light">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Nuestros <span class="highlight">Minerales</span></h2>
+                    <p class="section-subtitle">Conoce nuestra oferta de minerales industriales y agregados para la construcción, con fichas técnicas detalladas para tu industria.</p>
+                </div>
+
+                <!-- Filtros -->
+                <div class="filters-container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="all">Todos</button>
+                        <button class="filter-btn" data-filter="Agregados para la construcción">Agregados para la construcción</button>
+                        <button class="filter-btn" data-filter="Rocas">Rocas</button>
+                        <button class="filter-btn" data-filter="Arcillas">Arcillas</button>
+                        <button class="filter-btn" data-filter="Calizas">Calizas</button>
+                        <button class="filter-btn" data-filter="Arenas">Arenas</button>
+                    </div>
+                    <div class="search-group">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input type="text" id="mineral-search" placeholder="Buscar mineral...">
+                    </div>
+                </div>
+
+                <!-- Grid de Materiales -->
+                <div id="materials-grid" class="materials-grid" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Cards generadas dinámicamente -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Ficha Técnica -->
+        <div id="mineral-modal" class="modal">
+            <div class="modal-content">
+                <button class="close-modal" aria-label="Cerrar modal"><i data-lucide="x"></i></button>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+
+        <!-- Explorador Interactivo -->
+        <section id="explorador" class="section-white">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Explorador <span class="highlight">Interactivo</span></h2>
+                    <p class="section-subtitle">Descubre cómo nuestros minerales son fundamentales en diversas industrias a nivel mundial.</p>
+                </div>
+
+                <div class="explorer-container" data-aos="fade-up">
+                    <!-- Selector de mineral -->
+                    <div class="explorer-sidebar">
+                        <h3>Selecciona un mineral</h3>
+                        <div class="explorer-menu" id="explorer-menu">
+                            <!-- Botones generados dinámicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Panel de información -->
+                    <div class="explorer-content">
+                        <div id="explorer-info" class="explorer-info active">
+                            <h2 id="exp-title">Selecciona un mineral</h2>
+                            <span id="exp-category" class="exp-category">Categoría</span>
+                            <p id="exp-desc">Haz clic en uno de los minerales de la lista para ver su información detallada y aplicaciones industriales.</p>
+                            
+                            <div class="exp-industries" id="exp-industries">
+                                <!-- Badges de industrias -->
+                            </div>
+                        </div>
+
+                        <div class="explorer-chart">
+                            <h3>Distribución de Usos</h3>
+                            <div style="position: relative; height: 300px; width: 100%;">
+                                <canvas id="usage-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medio Ambiente y Reforestación -->
+        <section id="ambiente" class="section-light environment-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Nuestro Compromiso <span class="highlight">Ambiental</span></h2>
+                    <p class="section-subtitle">Implementamos métodos avanzados de restauración ecológica y reforestación progresiva para devolverle a la naturaleza más de lo que nos brinda.</p>
+                </div>
+
+                <div class="environment-grid">
+                    <div class="env-card" data-aos="fade-up">
+                        <div class="env-icon"><i data-lucide="tree-deciduous"></i></div>
+                        <h3>Reforestación Continua</h3>
+                        <p>Por cada área intervenida, ejecutamos planes de reforestación inmediata plantando especies autóctonas para asegurar la recuperación del ecosistema original.</p>
+                    </div>
+                    <div class="env-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="env-icon"><i data-lucide="leaf"></i></div>
+                        <h3>Restauración Ecológica</h3>
+                        <p>No solo plantamos árboles; restauramos el suelo, estabilizamos taludes y devolvemos la capa vegetal fértil garantizando el retorno seguro de la fauna local.</p>
+                    </div>
+                    <div class="env-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="env-icon"><i data-lucide="droplets"></i></div>
+                        <h3>Gestión de Recursos</h3>
+                        <p>Sistemas de circuito cerrado para el uso de agua en nuestros procesos de lavado, logrando un altísimo porcentaje de recirculación hídrica sin descargas contaminantes.</p>
+                    </div>
+                </div>
+
+                <!-- Reforestation Process & Gallery -->
+                <div class="reforestation-process" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process-text">
+                        <h3>Restauración en Acción</h3>
+                        <p>Nuestro equipo en campo lidera activamente la siembra y recuperación ecológica de las zonas de intervención. Mediante un minucioso proceso recolectivo de capa vegetal, plantado progresivo y supervisión continua, garantizamos el firme regreso de un ecosistema seguro y próspero para nuestra región.</p>
+                    </div>
+                    <div class="reforestation-gallery">
+                        <div class="gallery-item"><img src="img/nosotros/reforestacion-1.jpg" alt="Personal laborando en reforestación 1" loading="lazy"></div>
+                        <div class="gallery-item"><img src="img/nosotros/reforestacion-2.jpg" alt="Personal laborando en reforestación 2" loading="lazy"></div>
+                        <div class="gallery-item"><img src="img/nosotros/reforestacion-3.jpg" alt="Personal laborando en reforestación 3" loading="lazy"></div>
+                        <div class="gallery-item"><img src="img/nosotros/reforestacion-4.jpg" alt="Personal laborando en reforestación 4" loading="lazy"></div>
+                        <div class="gallery-item"><img src="img/nosotros/reforestacion-5.jpg" alt="Personal laborando en reforestación 5" loading="lazy"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto Section -->
+        <section id="contacto" class="section-white">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Comunícate con <span class="highlight">Nosotros</span></h2>
+                    <p class="section-subtitle">¿Interesado en nuestros productos o servicios? Llena el formulario y un asesor te contactará a la brevedad.</p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="contact-info" data-aos="fade-right">
+                        <h3>Información de Contacto</h3>
+                        <p>Estamos disponibles para atender tus requerimientos a nivel nacional e internacional.</p>
+                        
+                        <div class="info-item">
+                            <div class="info-icon"><i data-lucide="map-pin"></i></div>
+                            <div>
+                                <h4>Sede Principal</h4>
+                                <p>Zona Industrial III, Barquisimeto, Estado Lara, Venezuela.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon"><i data-lucide="phone"></i></div>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>+58 (251) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon"><i data-lucide="mail"></i></div>
+                            <div>
+                                <h4>Correo Electrónico</h4>
+                                <p>contacto@minaslara.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="https://linkedin.com/company/minaslara" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                            <a href="https://instagram.com/minaslaraoficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                            <a href="https://twitter.com/minaslara" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container" data-aos="fade-left">
+                        <!-- Formspree endpoint placeholder -->
+                        <form action="https://formspree.io/f/xzdjkrkg" method="POST" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nombre Completo</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Empresa</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Correo Electrónico</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Teléfono</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Asunto</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected>Selecciona un asunto...</option>
+                                    <option value="cotizacion">Solicitud de Cotización</option>
+                                    <option value="informacion">Información Técnica</option>
+                                    <option value="exportacion">Exportaciones</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <i data-lucide="send"></i> Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating WhatsApp CTA -->
+    <a href="https://wa.me/582511234567?text=Hola,%20quisiera%20solicitar%20una%20cotización" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i data-lucide="message-circle"></i>
+        <span>Atención Inmediata</span>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Minas Lara</h3>
+                <p>Extracción, procesamiento y comercialización de minerales industriales y agregados para la construcción de alta calidad.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#impacto">Impacto</a></li>
+                    <li><a href="#materiales">Fichas Técnicas</a></li>
+                    <li><a href="#proceso">Cómo lo hacemos</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p><i data-lucide="map-pin"></i> Estado Lara, Venezuela</p>
+                <p><i data-lucide="mail"></i> contacto@minaslara.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Empresa de Minerales No Metálicos Jacinto Lara C.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+    
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+    <!-- Custom Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/materials.js"></script>
+    <script src="js/explorer.js"></script>
+    
+</body>
+</html>

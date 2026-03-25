@@ -1,0 +1,140 @@
+/* css/responsive.css */
+@media (max-width: 992px) {
+    .navbar-slogan {
+        display: none;
+    }
+    
+    .logo-wrapper {
+        gap: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--color-bg-white);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        z-index: 1001;
+    }
+    
+    .mobile-menu-btn.active i {
+        /* Optional: rotate or change icon if needed */
+        color: var(--color-primary);
+    }
+    
+    :root {
+        --spacing-xl: 3rem;
+        --spacing-lg: 2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-container {
+        position: relative;
+        transform: translateY(0);
+        margin-top: calc(var(--spacing-xl) * -0.5);
+    }
+
+    .interactive-data {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mision-vision {
+        flex-direction: column;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-icon {
+        width: 40px;
+        height: 40px;
+        box-shadow: 0 0 0 4px var(--color-bg-light);
+    }
+    
+    .timeline-icon i {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .timeline-content::before {
+        top: 10px;
+    }
+
+    .filters-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .modal-body-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-img {
+        min-height: 200px;
+    }
+
+    .explorer-container {
+        flex-direction: column;
+    }
+
+    .explorer-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .explorer-menu {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .exp-menu-btn {
+        white-space: nowrap;
+    }
+
+    .explorer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
