@@ -44,10 +44,16 @@
     :root {
         --spacing-xl: 3rem;
         --spacing-lg: 2rem;
+        --spacing-md: 1.25rem;
+    }
+
+    .navbar-logo {
+        max-height: 35px;
     }
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+        padding: 1.5rem 1rem;
     }
 
     .stats-container {
@@ -62,6 +68,16 @@
 
     .about-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .g-img-1 {
+        grid-row: auto;
+        grid-column: auto;
     }
 
     .mision-vision {
@@ -83,8 +99,12 @@
         height: 20px;
     }
     
+    .timeline-content {
+        padding: 1rem;
+    }
+
     .timeline-content::before {
-        top: 10px;
+        top: 20px;
     }
 
     .filters-container {
