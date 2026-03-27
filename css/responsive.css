@@ -51,25 +51,65 @@
         max-height: 35px;
     }
 
+    .nav-actions {
+        gap: var(--spacing-md); /* Aumento de espaciado para evitar clics accidentales */
+    }
+
+    .btn-nav-cta {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
     /* Reducción de tamaños en el grid estadístico para evitar desbordes a la derecha */
     .stat-number {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
     .stat-label {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+
+    .stat-item {
+        padding: 0.5rem;
     }
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
         padding: 1.5rem 1rem;
-        gap: 1rem; /* Reducir gap en móviles */
+        gap: 1.5rem 1rem; /* Más espacio vertical entre filas en móvil */
+    }
+
+    /* Ajustes específicos para el Hero en móvil */
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 80px;
+        min-height: auto;
+    }
+
+    .hero-text h1 {
+        margin-bottom: 1.5rem;
+        font-size: 2.2rem; /* Tamaño más controlado para evitar huerfanas feas */
+    }
+
+    .hero-text p {
+        margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%; /* Botones de ancho completo en móvil para mejor ergonomía */
     }
 
     .stats-container {
         position: relative;
         transform: translateY(0);
-        margin-top: calc(var(--spacing-xl) * -0.5);
+        margin-top: -40px;
+        margin-bottom: 2rem;
     }
 
     .interactive-data {
@@ -122,6 +162,22 @@
         align-items: stretch;
     }
 
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+        max-height: 90vh;
+    }
+
+    .close-modal {
+        top: 10px;
+        right: 10px;
+        background: var(--color-bg-white);
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        box-shadow: var(--shadow-soft);
+    }
+
     .modal-body-content {
         grid-template-columns: 1fr;
     }
@@ -154,6 +210,7 @@
 
     .hero-urgency {
         justify-content: center;
+        margin-top: 1rem;
     }
 
     .about-text, 
@@ -182,11 +239,18 @@
     .explorer-menu {
         flex-direction: row;
         overflow-x: auto;
-        padding-bottom: 10px;
+        padding-bottom: 15px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        gap: 0.5rem;
+        /* Indicador visual de scroll */
+        mask-image: linear-gradient(to right, black 85%, transparent 100%);
     }
 
     .exp-menu-btn {
         white-space: nowrap;
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
 
     .explorer-content {
