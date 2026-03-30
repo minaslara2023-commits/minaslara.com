@@ -37,7 +37,6 @@
     }
     
     .mobile-menu-btn.active i {
-        /* Optional: rotate or change icon if needed */
         color: var(--color-primary);
     }
     
@@ -47,31 +46,128 @@
         --spacing-md: 1.25rem;
     }
 
+    /* ───────────────── PREVENIR DESBORDE HORIZONTAL ───────────────── */
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* ───────────────── NAVBAR ───────────────── */
     .navbar-logo {
         max-height: 35px;
     }
 
-    /* Reducción de tamaños en el grid estadístico para evitar desbordes a la derecha */
+    .nav-actions {
+        gap: 0.75rem;
+    }
+
+    .btn-nav-cta {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    /* ───────────────── HERO SECTION (REESTRUCTURACIÓN COMPLETA) ───────────────── */
+    /* El hero ya NO es min-height: 100vh — evitamos el overflow de las stats */
+    .hero {
+        min-height: 0;
+        height: auto;
+        padding-top: 100px;
+        padding-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        overflow: hidden; /* Evita que las stats sobresalgan del viewport */
+    }
+
+    .hero-content {
+        padding-bottom: 2rem;
+    }
+
+    .hero-text {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(1.8rem, 7vw, 2.4rem);
+        margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-urgency {
+        justify-content: center;
+        margin-top: 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* ───────────────── STATS: SACAR DEL ABSOLUTE, PANEL DEBAJO ───────────────── */
+    .stats-container {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        transform: none !important;
+        z-index: 2;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* El stats-grid también tiene clase 'container' — sobreescribir su max-width y padding */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        padding: 1.25rem 1rem;
+        border-radius: 12px;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
     .stat-number {
         font-size: 2rem;
     }
-    
+
     .stat-label {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
     }
 
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 1.5rem 1rem;
-        gap: 1rem; /* Reducir gap en móviles */
+    .stat-item {
+        padding: 0.25rem;
     }
 
-    .stats-container {
-        position: relative;
-        transform: translateY(0);
-        margin-top: calc(var(--spacing-xl) * -0.5);
-    }
-
+    /* ───────────────── RESTO DE SECCIONES ───────────────── */
     .interactive-data {
         grid-template-columns: 1fr;
     }
@@ -122,12 +218,32 @@
         align-items: stretch;
     }
 
+    .modal-content {
+        width: 95%;
+        max-width: 95vw;
+        padding: 1.5rem;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .close-modal {
+        top: 10px;
+        right: 10px;
+        background: var(--color-bg-white);
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        box-shadow: var(--shadow-soft);
+        z-index: 10;
+    }
+
     .modal-body-content {
         grid-template-columns: 1fr;
     }
     
     .modal-img {
         min-height: 200px;
+        max-height: 250px;
     }
 
     .explorer-container {
@@ -138,22 +254,6 @@
         width: 100%;
         border-right: none;
         border-bottom: 1px solid #e2e8f0;
-    }
-
-    /* Centrado global de bloques de texto (salvo excepciones como la línea de tiempo) */
-    .hero-text {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .hero-urgency {
-        justify-content: center;
     }
 
     .about-text, 
@@ -182,11 +282,17 @@
     .explorer-menu {
         flex-direction: row;
         overflow-x: auto;
-        padding-bottom: 10px;
+        padding-bottom: 15px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        gap: 0.5rem;
+        mask-image: linear-gradient(to right, black 85%, transparent 100%);
     }
 
     .exp-menu-btn {
         white-space: nowrap;
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
 
     .explorer-content {
@@ -200,10 +306,29 @@
     .form-row {
         grid-template-columns: 1fr;
     }
+
+    /* Galería de reforestación */
+    .reforestation-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ops-gallery {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
     .stats-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        padding: 1rem 0.75rem;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(1.6rem, 8vw, 2rem);
     }
 }
