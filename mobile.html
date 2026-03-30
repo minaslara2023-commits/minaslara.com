@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Router Móvil -->
+    <!-- Router PC -->
     <script>
-        if (/Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent)) {
-            window.location.href = "mobile.html";
+        if (!/Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent)) {
+            window.location.href = "index.html";
         }
     </script>
     <meta charset="UTF-8">
