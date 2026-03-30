@@ -1,0 +1,21 @@
+{
+  "name": "minaslara.com",
+  "version": "1.0.0",
+  "description": "Sitio web estático para la Empresa de Minerales No Metálicos Jacinto Lara C.A.",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minaslara2023-commits/minaslara.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/minaslara2023-commits/minaslara.com/issues"
+  },
+  "homepage": "https://github.com/minaslara2023-commits/minaslara.com#readme"
+}
