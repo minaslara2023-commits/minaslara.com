@@ -20,5 +20,8 @@
   "homepage": "https://github.com/minaslara2023-commits/minaslara.com#readme",
   "devDependencies": {
     "jest": "^30.3.0"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
   }
 }
