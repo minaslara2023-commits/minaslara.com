@@ -220,3 +220,27 @@ input, select, textarea {
   pointer-events: none;
   z-index: 10;
 }
+
+/* 4. Fix Explorer Layout */
+.explorer-sidebar {
+  width: 100% !important;
+  border-right: none !important;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.explorer-menu {
+  flex-direction: row !important;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.exp-menu-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.explorer-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.5rem !important;
+}

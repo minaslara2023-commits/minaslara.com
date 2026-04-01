@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const mapElement = document.getElementById('impact-map');
     
     if (mapElement) {
-        // Coordenadas Estado Lara, Venezuela (Aproximadas para visualización)
-        const laraCoords = [10.0645, -69.6738];
+        // Coordenadas Sede Minas Lara
+        const laraCoords = [10.079478792373264, -69.34565314947098];
         
         const map = L.map('impact-map', {
             scrollWheelZoom: false // Para no interrumpir el scroll de la página
