@@ -166,3 +166,11 @@ input, select, textarea {
 .navbar-slogan {
   display: none !important; /* Elimina lema largo del header móvil para evitar descuadrar el logo */
 }
+
+/* Fix Ops Gallery Overlays */
+.ops-overlay {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+  /* Se elimina cualquier evento fantasma que tape la foto en todo el alto */
+  pointer-events: none;
+}
