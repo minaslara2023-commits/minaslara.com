@@ -167,10 +167,56 @@ input, select, textarea {
   display: none !important; /* Elimina lema largo del header móvil para evitar descuadrar el logo */
 }
 
+/* 1. Header & Logo Fix */
+.navbar {
+  height: auto !important;
+  min-height: 70px;
+  padding: 10px 0 !important;
+}
+
+.logo {
+  flex-direction: row !important; /* Poner logo y texto uno al lado del otro */
+  gap: 12px !important;
+  align-items: center;
+}
+
+.navbar-logo {
+  max-height: 40px !important;
+}
+
+.logo-text {
+  text-align: left !important;
+  font-size: 1.2rem !important;
+}
+
+/* 2. Search box overlapping Fix */
+.search-group input {
+  padding-left: 3rem !important; /* Forzar espacio profundo para la lupa */
+}
+
+.search-icon {
+  z-index: 5; /* Asegurar que la lupa quede por encima */
+}
+
+/* 3. Operaciones & Maquinaria Titles Overlapping Fix */
+.ops-gallery .gallery-img {
+  min-height: 250px; /* Forzar altura fija a los contenedores de foto para que no colapsen a 0px */
+  display: flex;
+}
+
+.ops-gallery .gallery-img img {
+  position: absolute !important;
+  top: 0; 
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 /* Fix Ops Gallery Overlays */
 .ops-overlay {
   transform: translateY(0) !important;
   opacity: 1 !important;
   /* Se elimina cualquier evento fantasma que tape la foto en todo el alto */
   pointer-events: none;
+  z-index: 10;
 }
