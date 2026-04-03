@@ -125,6 +125,15 @@ section {
   height: 250px !important;
 }
 
+/* Fix Stats Container Overlap on Mobile */
+.stats-container {
+  position: relative !important;
+  transform: translateY(0) !important;
+  padding: 0 1.5rem !important;
+  margin-top: 2rem;
+}
+
+
 /* Timeline specific override */
 .timeline::before {
   left: 20px !important; /* Align to the left */

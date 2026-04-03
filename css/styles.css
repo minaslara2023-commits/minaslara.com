@@ -57,8 +57,10 @@
     --shadow-md: 0 10px 25px rgba(0,0,0,0.7);
 }
 
-[data-theme="dark"] .section-light {
+[data-theme="dark"] .section-light,
+[data-theme="dark"] .environment-section {
     background-color: #08111B;
+    background-image: none;
 }
 
 [data-theme="dark"] .impact-card,
@@ -369,22 +371,22 @@ section {
 
 .sun-icon {
     opacity: 1;
-    transform: scale(1);
+    transform: none;
 }
 
 .moon-icon {
     opacity: 0;
-    transform: scale(0) rotate(-90deg);
+    transform: none;
 }
 
 [data-theme="dark"] .sun-icon {
     opacity: 0;
-    transform: scale(0) rotate(90deg);
+    transform: none;
 }
 
 [data-theme="dark"] .moon-icon {
     opacity: 1;
-    transform: scale(1) rotate(0);
+    transform: none;
 }
 
 [data-theme="dark"] .theme-toggle {
