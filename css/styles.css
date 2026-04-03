@@ -75,6 +75,37 @@
     border-color: rgba(255, 255, 255, 0.05);
 }
 
+/* Fixes for elements that mistakenly keep light text on light backgrounds in dark mode */
+[data-theme="dark"] .contact-info > p,
+[data-theme="dark"] .info-item p,
+[data-theme="dark"] .footer-col p,
+[data-theme="dark"] .footer-col ul a,
+[data-theme="dark"] .footer-bottom {
+    color: #4A5568 !important;
+}
+
+[data-theme="dark"] .footer-bottom {
+    border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .footer-col ul a:hover {
+    color: var(--color-secondary) !important;
+}
+
+[data-theme="dark"] .info-icon,
+[data-theme="dark"] .social-links a {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .social-links a:hover {
+    background: var(--color-secondary);
+    color: #FFF;
+}
+
+[data-theme="dark"] .modal-table tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* Reset Global */
 * {
     margin: 0;

@@ -175,6 +175,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
         
+        // Listener para generar PDF
+        const btnPdf = modalBody.querySelector('.btn-cta-pdf');
+        if(btnPdf) {
+            btnPdf.addEventListener('click', () => {
+                if(window.downloadMineralPDF) {
+                    window.downloadMineralPDF(mineral);
+                } else {
+                    alert("La funcionalidad de PDF aún está cargando o no está disponible en este momento.");
+                }
+            });
+        }
+        
         modal.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevenir scroll
     }
