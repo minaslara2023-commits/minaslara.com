@@ -7,8 +7,8 @@ window.downloadMineralPDF = function(mineral) {
     // Pega aquí la URL Web App generada por Google Apps Script "Implementar como Aplicación Web"
     const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbydB_0oBlLWUr_J4u45qVgrPnm8-yQmamklBszs4S5RjVZV_pjm-RCGc5uc80H8cml-/exec';
 
-    if (GAS_WEB_APP_URL === 'https://script.google.com/macros/s/AKfycbydB_0oBlLWUr_J4u45qVgrPnm8-yQmamklBszs4S5RjVZV_pjm-RCGc5uc80H8cml-/exec' || !GAS_WEB_APP_URL.includes('script.google.com')) {
-        alert("Configuración Pendiente: Todavía falta pegar la URL de tu Google Apps Script en el archivo js/pdf.js para habilitar las descargas.");
+    if (!GAS_WEB_APP_URL.includes('script.google.com/macros/s/')) {
+        alert("Configuración Pendiente: La URL del Google Apps Script no parece válida.");
         return;
     }
 
