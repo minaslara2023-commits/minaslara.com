@@ -38,7 +38,7 @@ window.downloadMineralPDF = function(mineral) {
     pdfContainer.innerHTML = `
         <style>
             #pdf-container {
-                width: 100%;
+                width: 800px !important;
                 background-color: #FFFFFF !important;
                 color: #1A202C !important;
                 font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif !important;
@@ -223,20 +223,12 @@ window.downloadMineralPDF = function(mineral) {
         </div>
     `;
 
-    // Lo agregamos al body en un contenedor wrapper oculto
-    const wrapper = document.createElement('div');
-    wrapper.style.position = 'absolute';
-    wrapper.style.left = '-9999px';
-    wrapper.style.top = '-9999px';
-    wrapper.appendChild(pdfContainer);
-    document.body.appendChild(wrapper);
-
     // Opciones para la generación del PDF
     const opt = {
-        margin:       [0, 0, 0, 0],
+        margin:       0.3,
         filename:     `Ficha_Tecnica_${mineral.nombre.replace(/\s+/g, '_')}.pdf`,
         image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2, useCORS: true, logging: false },
+        html2canvas:  { scale: 2, useCORS: true, logging: false, windowWidth: 800 },
         jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
     };
 
@@ -248,17 +240,14 @@ window.downloadMineralPDF = function(mineral) {
         btnPdf.disabled = true;
     }
 
-    // Generar PDF
+    // Generar PDF pasándole el elemento sin adjuntar al DOM
     html2pdf().set(opt).from(pdfContainer).save().then(() => {
-        // Limpieza
-        document.body.removeChild(wrapper);
         if(btnPdf) {
             btnPdf.innerHTML = originalText;
             btnPdf.disabled = false;
         }
     }).catch(err => {
         console.error("Error generating PDF:", err);
-        document.body.removeChild(wrapper);
         if(btnPdf) {
             btnPdf.innerHTML = originalText;
             btnPdf.disabled = false;

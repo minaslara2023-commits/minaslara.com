@@ -113,4 +113,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.5 });
         observer.observe(statsContainer);
     }
+
+    // Formulario de Contacto: Captura de Datos Ocultos (Fecha, Hora, IP, Navegador)
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        const addHiddenField = (form, name, value) => {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = name;
+            input.value = value;
+            form.appendChild(input);
+        };
+
+        // Capturar Fecha, Hora y Navegador locales al momento de abrir la página
+        const now = new Date();
+        addHiddenField(contactForm, 'Fecha_Local', now.toLocaleDateString('es-VE'));
+        addHiddenField(contactForm, 'Hora_Local', now.toLocaleTimeString('es-VE'));
+        addHiddenField(contactForm, 'Navegador', navigator.userAgent);
+
+        // Capturar IP a través de un servicio público
+        fetch('https://api.ipify.org?format=json')
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.ip) {
+                    addHiddenField(contactForm, 'Direccion_IP', data.ip);
+                }
+            })
+            .catch(err => console.log('Fetch IP fallido o bloqueado por el navegador.'));
+    }
 });
