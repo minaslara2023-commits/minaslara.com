@@ -223,12 +223,27 @@ window.downloadMineralPDF = function(mineral) {
         </div>
     `;
 
+    // Es CRÍTICO adjudicar el elemento al body para que html2canvas pueda evaluar texturas e imágenes.
+    // Usamos opacity 1 y position absolute lejano para asegurarnos de que el render de pantalla completo no esté en blanco,
+    // o mejor aun de opacity 0.001 con fixed.
+    const wrapper = document.createElement('div');
+    wrapper.style.position = 'fixed';
+    wrapper.style.top = '0';
+    wrapper.style.left = '0';
+    wrapper.style.width = '800px'; 
+    wrapper.style.zIndex = '-9999'; // Detrás de todo el contenido real
+    wrapper.style.opacity = '0.001'; // Invisible para el ojo humano, pero renderizable para html2canvas
+    wrapper.style.pointerEvents = 'none';
+    
+    wrapper.appendChild(pdfContainer);
+    document.body.appendChild(wrapper);
+
     // Opciones para la generación del PDF
     const opt = {
-        margin:       0.3,
+        margin:       0.4,
         filename:     `Ficha_Tecnica_${mineral.nombre.replace(/\s+/g, '_')}.pdf`,
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2, useCORS: true, logging: false, windowWidth: 800 },
+        image:        { type: 'jpeg', quality: 1 },
+        html2canvas:  { scale: 2, useCORS: true, windowWidth: 800 },
         jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
     };
 
@@ -240,18 +255,22 @@ window.downloadMineralPDF = function(mineral) {
         btnPdf.disabled = true;
     }
 
-    // Generar PDF pasándole el elemento sin adjuntar al DOM
-    html2pdf().set(opt).from(pdfContainer).save().then(() => {
-        if(btnPdf) {
-            btnPdf.innerHTML = originalText;
-            btnPdf.disabled = false;
-        }
-    }).catch(err => {
-        console.error("Error generating PDF:", err);
-        if(btnPdf) {
-            btnPdf.innerHTML = originalText;
-            btnPdf.disabled = false;
-        }
-        alert("Ocurrió un error al generar el PDF. Asegúrate de tener conexión a Internet para descargar los recursos.");
-    });
+    // Generar PDF asegurando el render delay para cargar imágenes insertadas via innerHTML
+    setTimeout(() => {
+        html2pdf().set(opt).from(pdfContainer).save().then(() => {
+            document.body.removeChild(wrapper);
+            if(btnPdf) {
+                btnPdf.innerHTML = originalText;
+                btnPdf.disabled = false;
+            }
+        }).catch(err => {
+            console.error("Error generating PDF:", err);
+            document.body.removeChild(wrapper);
+            if(btnPdf) {
+                btnPdf.innerHTML = originalText;
+                btnPdf.disabled = false;
+            }
+            alert("Ocurrió un error al generar el PDF. Asegúrate de tener conexión a Internet.");
+        });
+    }, 500); // 500ms for images/fonts to initialize 
 };
