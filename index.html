@@ -554,6 +554,9 @@
                     <div class="contact-form-container" data-aos="fade-left">
                         <!-- Formspree endpoint placeholder -->
                         <form action="https://formspree.io/f/xzdjkrkg" method="POST" class="contact-form">
+                            <!-- Anti-Spam Honeypot (invisible al usuario, detecta bots) -->
+                            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+                            
                             <div class="form-group">
                                 <label for="name">Nombre Completo</label>
                                 <input type="text" id="name" name="name" required>
