@@ -140,5 +140,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
             .catch(err => console.log('Fetch IP fallido o bloqueado por el navegador.'));
+
+        // Evento GA4 para envío de formulario
+        contactForm.addEventListener('submit', () => {
+            if (typeof gtag === 'function') {
+                gtag('event', 'generate_lead', {
+                    'event_category': 'Contacto',
+                    'event_label': 'Formulario de Contacto Enviado'
+                });
+            }
+        });
+    }
+
+    // Eventos GA4 adicionales (WhatsApp)
+    const whatsappBtn = document.querySelector('.whatsapp-float');
+    if (whatsappBtn) {
+        whatsappBtn.addEventListener('click', () => {
+            if (typeof gtag === 'function') {
+                gtag('event', 'click_whatsapp', {
+                    'event_category': 'Contacto',
+                    'event_label': 'Boton Flotante WhatsApp'
+                });
+            }
+        });
     }
 });

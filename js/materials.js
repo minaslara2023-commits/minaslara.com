@@ -110,6 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function openModal(mineral) {
         if(!modal) return;
         
+        // Evento GA4 para ver la ficha del mineral
+        if (typeof gtag === 'function') {
+            gtag('event', 'view_item', {
+                'event_category': 'Catálogo',
+                'event_label': mineral.nombre
+            });
+        }
+        
         const industriesTags = mineral.industrias.map(ind => `<span class="modal-tag">${ind}</span>`).join('');
         const benefitsList = (mineral.beneficios || []).map(b => `<li><i data-lucide="check-circle-2"></i> ${b}</li>`).join('');
         const appsList = (mineral.aplicaciones || []).map(a => `<li><i data-lucide="arrow-right-circle"></i> ${a}</li>`).join('');
@@ -179,6 +187,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnPdf = modalBody.querySelector('.btn-cta-pdf');
         if(btnPdf) {
             btnPdf.addEventListener('click', () => {
+                // Evento GA4 para descarga de PDF
+                if (typeof gtag === 'function') {
+                    gtag('event', 'download_pdf', {
+                        'event_category': 'Descargas',
+                        'event_label': 'Ficha Técnica: ' + mineral.nombre
+                    });
+                }
+
                 if(window.downloadMineralPDF) {
                     window.downloadMineralPDF(mineral);
                 } else {
