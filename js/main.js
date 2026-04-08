@@ -8,14 +8,23 @@ document.addEventListener('DOMContentLoaded', () => {
         offset: 100
     });
 
-    // Navbar scroll effect
+    // Navbar scroll effect y Parallax
     const navbar = document.getElementById('navbar');
+    const heroImg = document.querySelector('.hero-bg img');
     
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+        const scrolled = window.scrollY;
+        
+        // Navbar
+        if (scrolled > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
+        }
+        
+        // Parallax Hero
+        if (heroImg && scrolled < window.innerHeight) {
+            heroImg.style.transform = `translateY(${scrolled * 0.4}px)`;
         }
     });
 
