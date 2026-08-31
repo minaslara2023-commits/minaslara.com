@@ -84,7 +84,7 @@ window.downloadMineralPDF = async function(mineral) {
                             text: [
                                 { text: 'FICHA TÉCNICA DE PRODUCTO\n', bold: true, color: '#0D2137' },
                                 { text: 'Empresa de Minerales No Metálicos Jacinto Lara C.A.\n', color: '#4A5568', fontSize: 10 },
-                                { text: '+58 251 1234567 | contacto@minaslara.com\n', color: '#4A5568', fontSize: 10 },
+                                { text: '+58 253 2370140 | direccion.minas2026@gmail.com\n', color: '#4A5568', fontSize: 10 },
                                 { text: `Fecha de emisión: ${dateStr}`, color: '#A0AEC0', fontSize: 9 }
                             ],
                             alignment: 'right',
