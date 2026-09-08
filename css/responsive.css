@@ -264,12 +264,207 @@
     }
 
     .impact-icon, 
+/* ───────────────── HERO SECTION (REESTRUCTURACIÓN COMPLETA) ───────────────── */
+    /* El hero ya NO es min-height: 100vh — evitamos el overflow de las stats */
+    .hero {
+        min-height: 0;
+        height: auto;
+        padding-top: 100px;
+        padding-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        overflow: hidden; /* Evita que las stats sobresalgan del viewport */
+    }
+
+    .hero-content {
+        padding-bottom: 2rem;
+    }
+
+    .hero-text {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(1.8rem, 7vw, 2.4rem);
+        margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-urgency {
+        justify-content: center;
+        margin-top: 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* ───────────────── STATS: SACAR DEL ABSOLUTE, PANEL DEBAJO ───────────────── */
+    .stats-container {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        transform: none !important;
+        z-index: 2;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* El stats-grid también tiene clase 'container' — sobreescribir su max-width y padding */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        padding: 1.25rem 1rem;
+        border-radius: 12px;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+
+    .stat-item {
+        padding: 0.25rem;
+    }
+
+    /* ───────────────── RESTO DE SECCIONES ───────────────── */
+    .interactive-data {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .g-img-1 {
+        grid-row: auto;
+        grid-column: auto;
+    }
+
+    .mision-vision {
+        flex-direction: column;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-icon {
+        width: 40px;
+        height: 40px;
+        box-shadow: 0 0 0 4px var(--color-bg-light);
+    }
+    
+    .timeline-icon i {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .timeline-content {
+        padding: 1rem;
+    }
+
+    .timeline-content::before {
+        top: 20px;
+    }
+
+    .filters-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .modal-content {
+        width: 95%;
+        max-width: 95vw;
+        padding: 1.5rem;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .close-modal {
+        top: 10px;
+        right: 10px;
+        background: var(--color-bg-white);
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        box-shadow: var(--shadow-soft);
+        z-index: 10;
+    }
+
+    .modal-body-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-img {
+        min-height: 200px;
+        max-height: 250px;
+    }
+
+    .explorer-container {
+        flex-direction: column;
+    }
+
+    .explorer-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .about-text, 
+    .impact-card, 
+    .env-card, 
+    .footer-col {
+        text-align: center;
+    }
+
+    .impact-icon, 
     .env-icon {
         margin-left: auto;
         margin-right: auto;
     }
 
-    .contact-info .info-item {
+    .contact-info .info-item,
+    .contrataciones-info .info-item {
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -299,7 +494,8 @@
         grid-template-columns: 1fr;
     }
 
-    .contact-wrapper {
+    .contact-wrapper,
+    .contrataciones-wrapper {
         grid-template-columns: 1fr;
     }
     

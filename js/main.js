@@ -124,41 +124,122 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Formulario de Contacto: Captura de Datos Ocultos (Fecha, Hora, IP, Navegador)
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        const addHiddenField = (form, name, value) => {
+    // Formulario de Contacto: Captura de Datos Ocultos (Fecha, Hora, IP, Navegador)
+    const contactForms = document.querySelectorAll('.contact-form');
+    contactForms.forEach(form => {
+        const addHiddenField = (f, name, value) => {
             const input = document.createElement('input');
             input.type = 'hidden';
             input.name = name;
             input.value = value;
-            form.appendChild(input);
+            f.appendChild(input);
         };
 
-        // Capturar Fecha, Hora y Navegador locales al momento de abrir la página
         const now = new Date();
-        addHiddenField(contactForm, 'Fecha_Local', now.toLocaleDateString('es-VE'));
-        addHiddenField(contactForm, 'Hora_Local', now.toLocaleTimeString('es-VE'));
-        addHiddenField(contactForm, 'Navegador', navigator.userAgent);
+        addHiddenField(form, 'Fecha_Local', now.toLocaleDateString('es-VE'));
+        addHiddenField(form, 'Hora_Local', now.toLocaleTimeString('es-VE'));
+        addHiddenField(form, 'Navegador', navigator.userAgent);
 
-        // Capturar IP a través de un servicio público
         fetch('https://api.ipify.org?format=json')
             .then(res => res.json())
             .then(data => {
                 if (data && data.ip) {
-                    addHiddenField(contactForm, 'Direccion_IP', data.ip);
+                    addHiddenField(form, 'Direccion_IP', data.ip);
                 }
             })
-            .catch(err => console.log('Fetch IP fallido o bloqueado por el navegador.'));
+            .catch(() => {});
 
-        // Evento GA4 para envío de formulario
-        contactForm.addEventListener('submit', () => {
+        form.addEventListener('submit', () => {
             if (typeof gtag === 'function') {
                 gtag('event', 'generate_lead', {
-                    'event_category': 'Contacto',
-                    'event_label': 'Formulario de Contacto Enviado'
+                    'event_category': form.id === 'form-contrataciones' ? 'Contrataciones' : 'Contacto',
+                    'event_label': form.id === 'form-contrataciones' ? 'Formulario Proveedor Enviado' : 'Formulario Contacto Enviado'
                 });
             }
         });
+    });
+
+    // Formulario de Contrataciones Abiertas: Drag and drop & file list preview
+    const contratacionesForm = document.getElementById('form-contrataciones');
+    if (contratacionesForm) {
+        const fileInput = contratacionesForm.querySelector('#recaudos_file');
+        const dropzone = contratacionesForm.querySelector('#dropzone-recaudos');
+        const fileListContainer = contratacionesForm.querySelector('#recaudos-file-list');
+
+        if (fileInput && dropzone && fileListContainer) {
+            const allowedExtensions = ['pdf', 'jpg', 'jpeg'];
+
+            const updateFileList = () => {
+                fileListContainer.innerHTML = '';
+                const files = Array.from(fileInput.files);
+
+                if (files.length === 0) {
+                    return;
+                }
+
+                let invalidFiles = [];
+
+                files.forEach(file => {
+                    const ext = file.name.split('.').pop().toLowerCase();
+                    if (!allowedExtensions.includes(ext)) {
+                        invalidFiles.push(file.name);
+                        return;
+                    }
+
+                    const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
+                    const fileItem = document.createElement('div');
+                    fileItem.className = 'file-preview-item';
+                    
+                    const isPdf = ext === 'pdf';
+                    const badgeClass = isPdf ? 'badge-pdf' : 'badge-jpg';
+
+                    fileItem.innerHTML = `
+                        <div class="file-info">
+                            <span class="file-badge ${badgeClass}">${ext.toUpperCase()}</span>
+                            <span class="file-name" title="${file.name}">${file.name}</span>
+                            <span class="file-size">(${sizeMb} MB)</span>
+                        </div>
+                    `;
+                    fileListContainer.appendChild(fileItem);
+                });
+
+                if (invalidFiles.length > 0) {
+                    alert(`Formatos no permitidos detectados: ${invalidFiles.join(', ')}.\nPor favor adjunta únicamente archivos en formato PDF o JPG/JPEG.`);
+                    fileInput.value = '';
+                    fileListContainer.innerHTML = '';
+                }
+
+                if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                    window.lucide.createIcons();
+                }
+            };
+
+            fileInput.addEventListener('change', updateFileList);
+
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropzone.addEventListener(eventName, (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropzone.classList.add('drag-over');
+                });
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropzone.addEventListener(eventName, (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropzone.classList.remove('drag-over');
+                });
+            });
+
+            dropzone.addEventListener('drop', (e) => {
+                const dt = e.dataTransfer;
+                if (dt && dt.files && dt.files.length > 0) {
+                    fileInput.files = dt.files;
+                    updateFileList();
+                }
+            });
+        }
     }
 
     // Eventos GA4 adicionales (WhatsApp)

@@ -128,6 +128,7 @@
                 <a href="#explorador">Explorador</a>
                 <a href="#impacto">Impacto</a>
                 <a href="#operaciones">Operaciones</a>
+                <a href="#contrataciones">Contrataciones</a>
             </nav>
             <div class="nav-actions">
                 <a href="#contacto" class="btn btn-primary btn-nav-cta">Cotizar ahora</a>
@@ -540,6 +541,120 @@
                         <div class="gallery-item"><img src="img/nosotros/reforestacion-3.jpg" alt="Personal laborando en reforestación 3" loading="lazy"></div>
                         <div class="gallery-item"><img src="img/nosotros/reforestacion-4.jpg" alt="Personal laborando en reforestación 4" loading="lazy"></div>
                         <div class="gallery-item"><img src="img/nosotros/reforestacion-5.jpg" alt="Personal laborando en reforestación 5" loading="lazy"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Concurso de Contrataciones Abiertas / Registro de Proveedores -->
+        <section id="contrataciones" class="section-light">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="badge"><i data-lucide="file-check-2"></i> Licitaciones y Servicios</span>
+                    <h2 class="section-title">Concurso de <span class="highlight">Contrataciones Abiertas</span></h2>
+                    <p class="section-subtitle">Invitamos a empresas, contratistas y proveedores a ofertar y registrarse para formar parte del catálogo oficial de la Empresa de Minerales No Metálicos Jacinto Lara C.A.</p>
+                </div>
+
+                <div class="contrataciones-wrapper">
+                    <div class="contrataciones-info" data-aos="fade-right">
+                        <h3>Registro de Proveedores</h3>
+                        <p>Buscamos aliados estratégicos en las áreas de transporte pesado, mantenimiento industrial, repuestos, insumos mineros y servicios profesionales.</p>
+                        
+                        <div class="info-item">
+                            <div class="info-icon"><i data-lucide="shield-check"></i></div>
+                            <div>
+                                <h4>Transparencia y Requisitos</h4>
+                                <p>Proceso abierto y auditable para la contratación de bienes y servicios bajo el marco legal vigente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon"><i data-lucide="file-text"></i></div>
+                            <div>
+                                <h4>Recaudos Digitales (PDF / JPG)</h4>
+                                <p>Requerimos RIF actualizado, Registro Mercantil, Solvencias y Dossier de servicios en formato PDF o JPG.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon"><i data-lucide="mail"></i></div>
+                            <div>
+                                <h4>Recepción Directa</h4>
+                                <p>Los datos y recaudos ingresados se remiten directamente a la dirección institucional: <strong>direccion.minas2026@gmail.com</strong>.</p>
+                            </div>
+                        </div>
+
+                        <div class="recaudos-banner">
+                            <i data-lucide="info"></i>
+                            <span>Asegúrate de que los archivos adjuntos sean legibles y estén en formato <strong>PDF</strong> o <strong>JPG/JPEG</strong>.</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container" data-aos="fade-left">
+                        <form action="https://formspree.io/f/xzdjkrkg" method="POST" enctype="multipart/form-data" class="contact-form" id="form-contrataciones">
+                            <!-- Anti-Spam Honeypot -->
+                            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+                            <input type="hidden" name="_subject" value="Postulación Concurso de Contrataciones Abiertas - Proveedor" />
+                            
+                            <div class="form-group">
+                                <label for="proveedor_nombre">Nombre o Razón Social <span class="required">*</span></label>
+                                <input type="text" id="proveedor_nombre" name="empresa_nombre" placeholder="Ej: Inversiones y Servicios C.A." required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="proveedor_rif">RIF de la Empresa <span class="required">*</span></label>
+                                    <input type="text" id="proveedor_rif" name="empresa_rif" placeholder="Ej: J-12345678-9" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="proveedor_phone">Teléfono de Contacto <span class="required">*</span></label>
+                                    <input type="tel" id="proveedor_phone" name="empresa_telefono" placeholder="Ej: +58 414 1234567" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="proveedor_email">Correo Electrónico de la Empresa <span class="required">*</span></label>
+                                <input type="email" id="proveedor_email" name="empresa_email" placeholder="contacto@tuempresa.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="proveedor_rubro">Servicios o Productos que Ofrece <span class="required">*</span></label>
+                                <select id="proveedor_rubro" name="servicio_rubro" required>
+                                    <option value="" disabled selected>Selecciona una categoría...</option>
+                                    <option value="transporte_logistica">Transporte Pesado y Logística</option>
+                                    <option value="mantenimiento_maquinaria">Mantenimiento de Maquinaria Pesada</option>
+                                    <option value="repuestos_insumos">Repuestos, Filtros y Partes Industriales</option>
+                                    <option value="combustibles_lubricantes">Lubricantes y Combustibles</option>
+                                    <option value="seguridad_epi">Equipos de Protección Personal (EPI)</option>
+                                    <option value="servicios_profesionales">Servicios Profesionales y Consultoría</option>
+                                    <option value="obras_civiles">Obras Civiles y Construcción</option>
+                                    <option value="otros_servicios">Otros Bienes o Servicios</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="proveedor_descripcion">Descripción de la Oferta de Servicio</label>
+                                <textarea id="proveedor_descripcion" name="oferta_descripcion" rows="3" placeholder="Describe brevemente la capacidad operativa, experiencia o flota de tu empresa..."></textarea>
+                            </div>
+                            
+                            <!-- Dropzone de Recaudos (JPG y PDF) -->
+                            <div class="form-group">
+                                <label>Recaudos Digitales (RIF, Registro Mercantil, Dossier) <span class="required">*</span></label>
+                                <div class="dropzone" id="dropzone-recaudos">
+                                    <input type="file" id="recaudos_file" name="recaudos[]" accept=".pdf,.jpg,.jpeg,image/jpeg,application/pdf" multiple class="file-input" required>
+                                    <div class="dropzone-content">
+                                        <i data-lucide="upload-cloud" class="dropzone-icon"></i>
+                                        <p class="dropzone-text">Arrastra y suelta tus recaudos aquí o <span class="browse-btn">haz clic para buscar</span></p>
+                                        <p class="dropzone-hint">Formatos permitidos: <strong>PDF, JPG, JPEG</strong> (Máx. 10MB)</p>
+                                    </div>
+                                </div>
+                                <div id="recaudos-file-list" class="file-list-preview"></div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <i data-lucide="send"></i> Enviar Postulación de Proveedor
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
