@@ -30,8 +30,9 @@
         })(window, document, "clarity", "script", "w7lrbp3pfr");
     </script>
 
-    <!-- Sentry Error Tracking -->
+    <!-- Sentry Error Tracking (Async) -->
     <script
+      async
       src="https://js.sentry-cdn.com/484e48574f6343aeddaf5fa81c27afc6.min.js"
       crossorigin="anonymous"
     ></script>
@@ -68,16 +69,21 @@
     <link rel="canonical" href="https://minaslara.com">
     <link rel="manifest" href="manifest.json">
     
-    <!-- Google Fonts -->
+    <!-- Preconnect CDNs for faster TTFB & FCP -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- AOS CSS (Animations) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Preload Hero Image -->
-    <link rel="preload" href="img/hero/hero-bg.jpeg" as="image">
+    <!-- Preload Hero Image with High Priority (LCP Optimization) -->
+    <link rel="preload" href="img/hero/hero-bg.jpeg" as="image" fetchpriority="high">
     
     <!-- Leaflet CSS (Map) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
@@ -115,7 +121,7 @@
         <div class="container nav-content">
             <div class="logo-wrapper">
                 <a href="#inicio" class="logo">
-                    <img src="img/logos/logo.png" alt="Minas Lara Logo" class="navbar-logo">
+                    <img src="img/logos/logo.png" alt="Minas Lara Logo" class="navbar-logo" width="180" height="50">
                     <span class="logo-text">Minas Lara</span>
                 </a>
                 <span class="navbar-slogan">MINERALES NO METÁLICOS PARA LA INDUSTRIA</span>
@@ -148,7 +154,7 @@
         <section id="inicio" class="hero">
             <div class="hero-bg">
                 <!-- EDITABLE: Imagen de fondo del Hero. Puedes usar una ruta local (img/...) o una URL de internet/nube -->
-                <img src="img/hero/hero-bg.jpeg" alt="Mina de extracción" loading="eager">
+                <img src="img/hero/hero-bg.jpeg" alt="Mina de extracción" loading="eager" fetchpriority="high" decoding="async" width="1920" height="1080">
                 <div class="hero-overlay"></div>
             </div>
             <div class="container hero-content">
@@ -802,26 +808,26 @@
     </script>
     
     <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 
     <!-- pdfmake JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/vfs_fonts.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/pdfmake.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/vfs_fonts.js"></script>
 
     <!-- Custom Scripts -->
-    <script src="js/data.js?v=1.1"></script>
-    <script src="js/main.js?v=1.1"></script>
-    <script src="js/map.js?v=1.1"></script>
-    <script src="js/charts.js?v=1.1"></script>
-    <script src="js/materials.js?v=1.1"></script>
-    <script src="js/explorer.js?v=1.1"></script>
-    <script src="js/pdf.js?v=1.1"></script>
+    <script defer src="js/data.js?v=1.1"></script>
+    <script defer src="js/main.js?v=1.1"></script>
+    <script defer src="js/map.js?v=1.1"></script>
+    <script defer src="js/charts.js?v=1.1"></script>
+    <script defer src="js/materials.js?v=1.1"></script>
+    <script defer src="js/explorer.js?v=1.1"></script>
+    <script defer src="js/pdf.js?v=1.1"></script>
     
 </body>
 </html>
