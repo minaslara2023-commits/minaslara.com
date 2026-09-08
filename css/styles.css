@@ -79,8 +79,6 @@
 }
 
 /* Fixes for elements that mistakenly keep light text on light backgrounds in dark mode */
-[data-theme="dark"] .contact-info > p,
-[data-theme="dark"] .info-item p,
 [data-theme="dark"] .footer-col p,
 [data-theme="dark"] .footer-col ul a,
 [data-theme="dark"] .footer-bottom {
@@ -643,16 +641,29 @@ footer {
 
 .section-title {
     font-size: clamp(2rem, 4vw, 3rem);
-    color: var(--color-primary);
+    color: #0D2137;
+    font-weight: 800;
 }
 
 .section-subtitle {
     font-size: 1.1rem;
-    color: var(--color-text-light);
+    color: #4A5568;
 }
 
 .highlight {
-    color: var(--color-secondary);
+    color: #D35400;
+}
+
+[data-theme="dark"] .section-title {
+    color: #F8F9FA !important;
+}
+
+[data-theme="dark"] .section-subtitle {
+    color: #CBD5E0 !important;
+}
+
+[data-theme="dark"] .highlight {
+    color: #F39C12 !important;
 }
 
 /* Impacto Section */
@@ -1420,6 +1431,26 @@ footer {
     color: var(--color-secondary);
 }
 
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(211, 84, 0, 0.12);
+    color: #D35400 !important;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    border: 1px solid rgba(211, 84, 0, 0.3);
+}
+
+[data-theme="dark"] .badge {
+    background: rgba(243, 156, 18, 0.15);
+    color: #F39C12 !important;
+    border: 1px solid rgba(243, 156, 18, 0.3);
+}
+
 .explorer-chart h3 {
     text-align: center;
     color: var(--color-primary);
@@ -1437,19 +1468,26 @@ footer {
     overflow: hidden;
 }
 
-.contact-info {
-    background: var(--color-primary);
-    color: var(--color-bg-white);
+.contact-info,
+.contrataciones-info {
+    background: #0D2137 !important;
+    color: #FFFFFF !important;
     padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
 }
 
-.contact-info h3 {
-    color: var(--color-secondary);
+.contact-info h3,
+.contrataciones-info h3 {
+    color: #F39C12 !important;
     font-size: 1.5rem;
+    margin-bottom: 8px;
+    font-weight: 700;
 }
 
-.contact-info > p {
-    color: #cbd5e0;
+.contact-info > p,
+.contrataciones-info > p {
+    color: #E2E8F0 !important;
     margin-bottom: var(--spacing-lg);
 }
 
@@ -1462,23 +1500,25 @@ footer {
 .info-icon {
     width: 40px;
     height: 40px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(243, 156, 18, 0.15) !important;
+    border: 1px solid rgba(243, 156, 18, 0.3) !important;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    color: var(--color-secondary);
+    color: #F39C12 !important;
 }
 
 .info-item h4 {
-    color: var(--color-bg-white);
+    color: #FFFFFF !important;
     margin-bottom: 4px;
     font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .info-item p {
-    color: #cbd5e0;
+    color: #CBD5E0 !important;
     font-size: 0.95rem;
 }
 
@@ -1522,9 +1562,13 @@ footer {
 .contact-form label {
     display: block;
     font-weight: 600;
-    color: var(--color-primary);
+    color: #0D2137 !important;
     margin-bottom: 8px;
     font-size: 0.95rem;
+}
+
+[data-theme="dark"] .contact-form label {
+    color: #F8F9FA !important;
 }
 
 .contact-form input,
@@ -2052,19 +2096,20 @@ footer {
 
 .dropzone-text {
     font-size: 0.95rem;
-    color: var(--color-text-main);
+    color: #1A202C !important;
     margin: 0;
+    font-weight: 600;
 }
 
 .browse-btn {
-    color: var(--color-secondary);
-    font-weight: 600;
+    color: #D35400 !important;
+    font-weight: 700;
     text-decoration: underline;
 }
 
 .dropzone-hint {
     font-size: 0.82rem;
-    color: #718096;
+    color: #4A5568 !important;
     margin: 0;
 }
 
@@ -2145,11 +2190,15 @@ footer {
 }
 
 [data-theme="dark"] .dropzone-text {
-    color: #e2e8f0;
+    color: #F8F9FA !important;
+}
+
+[data-theme="dark"] .browse-btn {
+    color: #F39C12 !important;
 }
 
 [data-theme="dark"] .dropzone-hint {
-    color: #94a3b8;
+    color: #CBD5E0 !important;
 }
 
 [data-theme="dark"] .file-preview-item {
