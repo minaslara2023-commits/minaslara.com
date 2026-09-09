@@ -254,4 +254,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Actualización automática dinámica de la fecha de última modificación en el pie de página
+    const lastUpdateTag = document.getElementById('last-update-tag');
+    if (lastUpdateTag) {
+        const lastMod = new Date(document.lastModified);
+        if (!isNaN(lastMod.getTime())) {
+            const day = String(lastMod.getDate()).padStart(2, '0');
+            const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+            const month = months[lastMod.getMonth()];
+            const year = lastMod.getFullYear();
+            
+            const versionMatch = lastUpdateTag.innerText.match(/v\d+\.\d+\.\d+/);
+            const currentVersion = versionMatch ? versionMatch[0] : 'v1.3.0';
+            
+            lastUpdateTag.innerHTML = `${currentVersion} • Última actualización: ${day} de ${month} de ${year}`;
+        }
+    }
 });
