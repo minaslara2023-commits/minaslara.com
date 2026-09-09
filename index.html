@@ -577,27 +577,27 @@
                         <div class="info-item">
                             <div class="info-icon"><i data-lucide="file-text"></i></div>
                             <div>
-                                <h4>Recaudos Digitales (PDF / JPG)</h4>
-                                <p>Requerimos RIF actualizado, Registro Mercantil, Solvencias y Dossier de servicios en formato PDF o JPG.</p>
+                                <h4>Envío Digital de Documentos</h4>
+                                <p>Requerimos RIF actualizado, RNC, Registro Mercantil e Información Empresarial enviada por correo digital.</p>
                             </div>
                         </div>
                         
                         <div class="info-item">
                             <div class="info-icon"><i data-lucide="mail"></i></div>
                             <div>
-                                <h4>Recepción Directa</h4>
-                                <p>Los datos y recaudos ingresados se remiten directamente a la dirección institucional: <strong>direccion.minas2026@gmail.com</strong>.</p>
+                                <h4>Recepción Directa por Correo</h4>
+                                <p>Toda la información se remite directamente a la dirección institucional: <strong>sncminaslara@gmail.com</strong>.</p>
                             </div>
                         </div>
 
                         <div class="recaudos-banner">
                             <i data-lucide="info"></i>
-                            <span>Asegúrate de que los archivos adjuntos sean legibles y estén en formato <strong>PDF</strong> o <strong>JPG/JPEG</strong>.</span>
+                            <span>Por favor envía toda la información de tu empresa (<strong>RIF, RNC, Dossier</strong>) en digital a <strong>sncminaslara@gmail.com</strong>.</span>
                         </div>
                     </div>
 
                     <div class="contact-form-container" data-aos="fade-left">
-                        <form action="https://formspree.io/f/xzdjkrkg" method="POST" enctype="multipart/form-data" class="contact-form" id="form-contrataciones">
+                        <form action="https://formspree.io/f/xzdjkrkg" method="POST" class="contact-form" id="form-contrataciones">
                             <!-- Anti-Spam Honeypot -->
                             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
                             <input type="hidden" name="_subject" value="Postulación Concurso de Contrataciones Abiertas - Proveedor" />
@@ -643,18 +643,14 @@
                                 <textarea id="proveedor_descripcion" name="oferta_descripcion" rows="3" placeholder="Describe brevemente la capacidad operativa, experiencia o flota de tu empresa..."></textarea>
                             </div>
                             
-                            <!-- Dropzone de Recaudos (JPG y PDF) -->
-                            <div class="form-group">
-                                <label>Recaudos Digitales (RIF, Registro Mercantil, Dossier) <span class="required">*</span></label>
-                                <div class="dropzone" id="dropzone-recaudos">
-                                    <input type="file" id="recaudos_file" name="recaudos[]" accept=".pdf,.jpg,.jpeg,image/jpeg,application/pdf" multiple class="file-input" required>
-                                    <div class="dropzone-content">
-                                        <i data-lucide="upload-cloud" class="dropzone-icon"></i>
-                                        <p class="dropzone-text">Arrastra y suelta tus recaudos aquí o <span class="browse-btn">haz clic para buscar</span></p>
-                                        <p class="dropzone-hint">Formatos permitidos: <strong>PDF, JPG, JPEG</strong> (Máx. 10MB)</p>
-                                    </div>
+                            <!-- Nota Importante: Envío Digital por Correo -->
+                            <div class="email-notice-card">
+                                <div class="notice-icon"><i data-lucide="mail-check"></i></div>
+                                <div class="notice-content">
+                                    <h4>Envío de Documentación Digital</h4>
+                                    <p>Por favor envía toda la información de tu empresa (<strong>RIF, RNC, Registro Mercantil e Información Empresarial</strong>) en formato digital directamente a nuestro correo oficial:</p>
+                                    <a href="mailto:sncminaslara@gmail.com" class="notice-email"><i data-lucide="mail"></i> sncminaslara@gmail.com</a>
                                 </div>
-                                <div id="recaudos-file-list" class="file-list-preview"></div>
                             </div>
                             
                             <button type="submit" class="btn btn-primary btn-submit">
